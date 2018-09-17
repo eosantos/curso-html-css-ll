@@ -104,6 +104,20 @@ blockquote {
     transform: scale(1.2) rotate(-5deg);
 }
 
+
+/* Aspas no citação */
+.cita1::before {
+    content: '“';
+    position: absolute;
+    font-size: 10em;
+    color: #bbb;
+}
+
+.cita1 > p {
+    position: relative;
+    line-height: -1em;
+}
+
 /* menu navegacao */
 aside a {
     color: inherit;
@@ -181,6 +195,17 @@ background-size: 25% 100%;
 background-repeat: no-repeat;
 }
 
+/* Aumentando apenas uma letra */
+
+.container > p::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    color: rgb(255, 51, 0);
+    text-shadow: 1px 1px #000;
+    margin-right: .2ch;
+    line-height: 1;
+}
+
 nav a {
     color:  #f7c602;
 }
@@ -222,6 +247,34 @@ main div {
 
 .linkedin {
     background-image: url(linkedin.png);
+}
+
+.icones-sociais a {
+    position: relative;
+}
+
+.icones-sociais a:hover::after,
+.icones-sociais a:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    text-indent: 0;
+    width: 300%;
+    background: rgb(255, 255, 255);
+    font-size: .75em;
+}
+
+.icones-sociais a:hover::before,
+.icones-sociais a:focus::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(.5em) rotate(45deg);
 }
 
 strong{
