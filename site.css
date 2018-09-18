@@ -10,6 +10,19 @@ h1, h2 {
     font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
+h1 {
+    animation: aparece 2s; 
+}
+
+@keyframes aparece {
+    0% {
+        opacity: 0;
+    }
+    100% {        
+        opacity: 10;
+    }
+}
+
 h2{
     font-size: 30px;
     clear: both;
@@ -39,6 +52,9 @@ blockquote {
     border: 10px solid #ffff0d;
     width: 250px;
     margin: 20px 40px;
+}
+.cita1 {
+    transition: box-shadow 1s, transform 1s;
 }
 
 /* Citações */
@@ -113,7 +129,19 @@ blockquote {
     color: #bbb;
 }
 
+.cita2::before {
+    content: '“';
+    position: absolute;
+    font-size: 10em;
+    color: #bbb;
+}
+
 .cita1 > p {
+    position: relative;
+    line-height: -1em;
+}
+
+.cita2 > p {
     position: relative;
     line-height: -1em;
 }
@@ -151,7 +179,7 @@ aside, img {
 
 .fotogame, .menu-site {
     float: left;
-    width: 17%;
+    width: calc(100% - 0.9 * 1250px);
     box-sizing: border-box;
 }
 
@@ -219,7 +247,7 @@ ul li a {
 }
 
 main div {
-	width: 720px;
+    width: calc(100% - 0.9 * 300px);
     margin: auto;
     padding: 30px;
     float: right;
@@ -431,13 +459,12 @@ main {
     line-height: 1;
     padding: 1em 0;
     box-sizing: border-box;
-
     text-align: center;
     text-decoration: none;
     background-color: #fe9d1b;
     color: white;
     border: .25em solid black;
-
+    transform: translate(calc(.707 * (3.5em - 100%) + 100%), calc(-.707 * 3.5em)) rotate(45deg);
     font-size: 1.2em;
     font-family: "Open Sans Condensed", sans-serif;
 }
@@ -493,3 +520,75 @@ main {
     left: 100px;
     transform: rotateX(10deg) rotateY(10deg);
   } */
+
+  /* TABELAS */
+ /* .habilidades th {
+    font-weight: bold;
+    background-color: #851944;
+    color: white;
+}
+
+/*
+.habilidades thead th {
+    /* não precisamos colocar font-weight e color
+       pois já fizemos isso para todos os th */
+  /*    background-color: #3C1D3D;
+  }
+
+  .habilidades td {
+    background-color: #eee;
+}
+
+.habilidades th,
+.habilidades td {
+    padding: 1em;
+}
+
+.habilidades {
+    border-collapse: separate;
+    border-spacing: .25em;
+}
+
+.habilidades {
+    margin: 1em 0;
+    position: initial;
+}
+
+.habilidades [colspan] {
+    text-align: center;
+    font-style: italic;
+}
+
+.habilidades [rowspan] {
+    vertical-align: middle;
+}
+*/
+/* FLEX BOX */
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    /* sobrescreve o site.css */
+    display: block;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.navegacao-site {
+    /* removemos position e top, além do float, já removido acima */
+    padding-top: calc(300px + 1em);
+}
+
+
+.fotogame,
+.minha-foto {
+    /* removemos a borda aqui */
+}
+
+.minha-foto {
+    border-bottom: .5em solid black;
+}
